@@ -24,7 +24,19 @@ themeToggleBtn.addEventListener("click", () => {
 function getRecommendation() {
     const randomIndex = Math.floor(Math.random() * dinnerMenus.length);
     const recommendedMenu = dinnerMenus[randomIndex];
-    menuDisplay.textContent = recommendedMenu;
+    
+    menuDisplay.innerHTML = ""; // Clear previous content
+
+    if (recommendedMenu === "Pizza") {
+        const pizzaImg = document.createElement("img");
+        pizzaImg.src = "pizzajpg.jpg";
+        pizzaImg.alt = "Pizza";
+        pizzaImg.style.maxWidth = "100%";
+        pizzaImg.style.maxHeight = "150px"; // Limit image height
+        menuDisplay.appendChild(pizzaImg);
+    } else {
+        menuDisplay.textContent = recommendedMenu;
+    }
 }
 
 generateBtn.addEventListener("click", getRecommendation);
