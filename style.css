@@ -1,25 +1,70 @@
 
+
+:root {
+    --background-color-light: #f0f2f5;
+    --container-background-light: #ffffff;
+    --text-color-light: #333;
+    --number-background-light: #eee;
+    --button-background-light: #4CAF50;
+    --button-hover-light: #45a049;
+
+    --background-color-dark: #222;
+    --container-background-dark: #333;
+    --text-color-dark: #fff;
+    --number-background-dark: #555;
+    --button-background-dark: #555;
+    --button-hover-dark: #777;
+}
+
 body {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    --background-color-light: var(--background-color-dark);
+    --container-background-light: var(--container-background-dark);
+    --text-color-light: var(--text-color-dark);
+    --number-background-light: var(--number-background-dark);
+    --button-background-light: var(--button-background-dark);
+    --button-hover-light: var(--button-hover-dark);
 }
 
 .container {
     text-align: center;
     padding: 40px;
     border-radius: 15px;
-    background-color: #ffffff;
+    background-color: var(--container-background-light);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
 }
 
 h1 {
-    margin-bottom: 30px;
-    color: #333;
+    margin-bottom: 20px;
+    color: var(--text-color-light);
+}
+
+#theme-toggle-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--button-background-light);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+#theme-toggle-btn:hover {
+    background-color: var(--button-hover-light);
 }
 
 .numbers-container {
@@ -33,13 +78,14 @@ h1 {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #eee;
+    background-color: var(--number-background-light);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #generate-btn {

@@ -1,6 +1,12 @@
 
+
 const generateBtn = document.getElementById("generate-btn");
 const numberElements = document.querySelectorAll(".number");
+const themeToggleBtn = document.getElementById("theme-toggle-btn");
+
+themeToggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});
 
 function generateLottoNumbers() {
     const numbers = new Set();
