@@ -1,19 +1,76 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinner Menu Recommendation</title>
-    <link rel="stylesheet" href="style.css">
+    <title>제휴 문의</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't increase total width */
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Dinner Menu Recommendation</h1>
-        <button id="theme-toggle-btn">Toggle Theme</button>
-        <div id="menu-display"></div>
-        <button id="generate-btn">Get Recommendation</button>
+        <h1>제휴 문의</h1>
+        <form action="https://formspree.io/f/mpqrreel" method="POST">
+            <label for="name">이름:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">이메일:</label>
+            <input type="email" id="email" name="_replyto" required>
+
+            <label for="message">메시지:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">문의 보내기</button>
+        </form>
     </div>
-    <script src="main.js"></script>
 </body>
 </html>
