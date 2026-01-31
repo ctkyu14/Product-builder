@@ -1,89 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제휴 문의</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7934832272328548"
-     crossorigin="anonymous"></script>
+    <title>Paulcy - 일상을 돕는 작은 도구들</title>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7934832272328548" crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-7934832272328548">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-        }
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box; /* Ensures padding doesn't increase total width */
-        }
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
-    <div id="lunch-recommendation" style="text-align: center; padding: 20px; background-color: #f0ad4e; color: white;">
-        <h2>오늘 점심 뭐먹지?</h2>
-        <button id="recommend-button" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">메뉴 추천받기</button>
-        <div id="lunch-result" style="display: none; margin-top: 20px;">
-            <h3>오늘의 추천 메뉴는...</h3>
-            <p id="menu-name" style="font-size: 1.5em; font-weight: bold;"></p>
+    <nav class="navbar">
+        <div class="container-nav">
+            <a class="logo" href="index.html">Paulcy</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="posts/post1.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="lunch-recommendation">
+            <h2>오늘 점심 뭐먹지?</h2>
+            <button id="recommend-button">메뉴 추천받기</button>
+            <div id="lunch-result" style="display: none; margin-top: 20px;">
+                <h3>오늘의 추천 메뉴는...</h3>
+                <p id="menu-name" style="font-size: 1.5em; font-weight: bold;"></p>
+            </div>
+        </div>
+
+        <hr style="margin: 40px 0;">
+
+        <div id="recent-posts">
+            <h2>최신 글</h2>
+            <div class="post-link">
+                <h3><a href="posts/post1.html">점심 메뉴, 더 이상 고민하지 마세요!</a></h3>
+                <p>매일 반복되는 점심 메뉴 고민, '선택의 역설'과 그 해결책에 대해 이야기합니다.</p>
+            </div>
+        </div>
+        
+        <hr style="margin: 40px 0;">
+
+        <div id="contact-section">
+            <h1>제휴 문의</h1>
+            <form action="https://formspree.io/f/mpqrreel" method="POST">
+                <label for="name">이름:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">이메일:</label>
+                <input type="email" id="email" name="_replyto" required>
+
+                <label for="message">메시지:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">문의 보내기</button>
+            </form>
         </div>
     </div>
-    <div class="container">
-        <h1>제휴 문의</h1>
-        <form action="https://formspree.io/f/mpqrreel" method="POST">
-            <label for="name">이름:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">이메일:</label>
-            <input type="email" id="email" name="_replyto" required>
-
-            <label for="message">메시지:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">문의 보내기</button>
-        </form>
-    </div>
+    
     <div id="disqus_thread"></div>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <p>&copy; 2026 Paulcy. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+
     <script>
         /**
         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
