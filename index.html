@@ -61,8 +61,12 @@
 </head>
 <body>
     <div id="lunch-recommendation" style="text-align: center; padding: 20px; background-color: #f0ad4e; color: white;">
-        <h2>오늘의 점심 추천</h2>
-        <p>바삭하고 맛있는 돈까스 어떠세요?</p>
+        <h2>오늘 점심 뭐먹지?</h2>
+        <button id="recommend-button" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">메뉴 추천받기</button>
+        <div id="lunch-result" style="display: none; margin-top: 20px;">
+            <h3>오늘의 추천 메뉴는...</h3>
+            <p id="menu-name" style="font-size: 1.5em; font-weight: bold;"></p>
+        </div>
     </div>
     <div class="container">
         <h1>제휴 문의</h1>
@@ -96,6 +100,19 @@
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
         })();
+    </script>
+    <script>
+        const recommendButton = document.getElementById('recommend-button');
+        const lunchResultDiv = document.getElementById('lunch-result');
+        const menuNameP = document.getElementById('menu-name');
+        const menuItems = ['돈까스', '김치찌개', '제육볶음', '비빔밥', '초밥', '파스타', '피자', '부대찌개', '된장찌개'];
+
+        recommendButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * menuItems.length);
+            const recommendedMenu = menuItems[randomIndex];
+            menuNameP.textContent = recommendedMenu;
+            lunchResultDiv.style.display = 'block';
+        });
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </body>
