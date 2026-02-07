@@ -93,6 +93,33 @@ body {
     background-color: #555;
 }
 
+/* Share Buttons */
+#share-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#twitter-share-button,
+#facebook-share-button,
+#copy-link-button {
+    background-color: #337ab7;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+#twitter-share-button:hover,
+#facebook-share-button:hover,
+#copy-link-button:hover {
+    background-color: #286090;
+}
+
+
 /* Contact Form from index.html */
 form label {
     display: block;

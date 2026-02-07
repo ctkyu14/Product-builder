@@ -63,12 +63,25 @@
     </nav>
 
     <div class="container">
+        <div class="hero">
+            <h1>Paulcy: 당신의 일상을 돕는 작은 도구들</h1>
+            <p>매일 마주하는 작은 고민들, Paulcy가 즐거운 해결책을 제안합니다.</p>
+        </div>
+
+        <hr style="margin: 40px 0;">
+
         <div id="lunch-recommendation">
-            <h2>오늘 점심 뭐먹지?</h2>
+            <h2>오늘 점심, 더 이상 고민하지 마세요!</h2>
+            <p>매일 반복되는 점심 메뉴 고민, 버튼 하나로 해결해 보세요. <br>Paulcy가 잠시나마 당신의 즐거운 점심시간을 돕겠습니다.</p>
             <button id="recommend-button">메뉴 추천받기</button>
             <div id="lunch-result" style="display: none; margin-top: 20px;">
                 <h3>오늘의 추천 메뉴는...</h3>
                 <p id="menu-name" style="font-size: 1.5em; font-weight: bold;"></p>
+                <div id="share-buttons" style="display: none; margin-top: 10px;">
+                    <button id="twitter-share-button">트위터에 공유</button>
+                    <button id="facebook-share-button">페이스북에 공유</button>
+                    <button id="copy-link-button">링크 복사</button>
+                </div>
             </div>
         </div>
 
@@ -135,12 +148,38 @@
         const lunchResultDiv = document.getElementById('lunch-result');
         const menuNameP = document.getElementById('menu-name');
         const menuItems = ['돈까스', '김치찌개', '제육볶음', '비빔밥', '초밥', '파스타', '피자', '부대찌개', '된장찌개'];
+        const shareButtons = document.getElementById('share-buttons');
+        const twitterShareButton = document.getElementById('twitter-share-button');
+        const facebookShareButton = document.getElementById('facebook-share-button');
+        const copyLinkButton = document.getElementById('copy-link-button');
 
         recommendButton.addEventListener('click', () => {
             const randomIndex = Math.floor(Math.random() * menuItems.length);
             const recommendedMenu = menuItems[randomIndex];
             menuNameP.textContent = recommendedMenu;
             lunchResultDiv.style.display = 'block';
+            shareButtons.style.display = 'block';
+        });
+
+        twitterShareButton.addEventListener('click', () => {
+            const text = `오늘 점심으로 ${menuNameP.textContent} 어떠세요?`;
+            const url = window.location.href;
+            const hashtags = "점심메뉴추천,Paulcy";
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${encodeURIComponent(hashtags)}`, '_blank');
+        });
+
+        facebookShareButton.addEventListener('click', () => {
+            const url = window.location.href;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+        });
+
+        copyLinkButton.addEventListener('click', () => {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('링크가 복사되었습니다!');
+            }, () => {
+                alert('링크 복사에 실패했습니다.');
+            });
         });
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
